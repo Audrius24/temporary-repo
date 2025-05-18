@@ -4,8 +4,6 @@
 # either "to high" "too low"   
 
 # Problems:
-# Does not handle non-integer inputs
-# Does not handle out of range inputs
 # Does not handle multiple guesses
 
 print("Welcome to the Number Guessing Game!")
@@ -13,26 +11,31 @@ print("I'm thinking of a number between 1 and 10")
 
 import random
 
+parsed_guess =  0 # Initialize parsed_guess to ensure it is defined before the loop
 number_to_guess = random.randint(1, 10)
 
-user_input = input("Please enter your guess: ")
+while parsed_guess != number_to_guess:
+    user_input = input("Please enter your guess (or type 'quit' to exit): ")
 
-print("You guessed: " + user_input)
-print(f"You guessed: {user_input}")
 
-try:
-    parsed_guess = int(user_input)
-except Exception:  
-    print("Invalid input! Please enter a valid integer.")
-    exit()
-if parsed_guess < 1 or parsed_guess > 10:
-    print("Your guess is out of range! Please guess a number between 1 and 10.python guess_game_extended.pyP") 
+    if user_input.lower() == 'quit':
+        print("Game exited. Goodbye!")
+        exit()
 
-elif parsed_guess < number_to_guess:
-    print("Too low")
-elif parsed_guess > number_to_guess:
-    print("Too high")
-else:
-    print("Congralutions! You guessed the number correctly")
+    print("You guessed: " + user_input)
+#print(f"You guessed: {user_input}")
 
-print("The number was: " + str(number_to_guess))
+    try:
+        parsed_guess = int(user_input)
+    except Exception:  
+        print("Invalid input! Please enter a valid integer.")
+        exit()
+
+    if parsed_guess < 1 or parsed_guess > 10:
+        print("your guess is out of range! Please enter a number between 1 and 10")
+    elif parsed_guess < number_to_guess:
+        print("Too low")
+    elif parsed_guess > number_to_guess:
+            print("Too high")
+    else:
+        print("Congralutions! You guessed the number correctly")

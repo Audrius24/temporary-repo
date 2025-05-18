@@ -26,7 +26,7 @@ except Exception:
     print("Invalid input! Please enter a valid integer.")
     exit()
 if parsed_guess < 1 or parsed_guess > 10:
-    print("Your guess is out of range! Please guess a number between 1 and 10.python guess_game_extended.py") 
+    print("Your guess is out of range! Please guess a number between 1 and 10.python guess_game_extended.pyP") 
 
 elif parsed_guess < number_to_guess:
     print("Too low")

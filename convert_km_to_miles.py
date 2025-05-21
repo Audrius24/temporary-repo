@@ -1,7 +1,5 @@
 # Simple Unit Converter: Kilometers to Miles
 
-Add unit converter script
-
 def convert_km_to_miles():
     try:
         # Ask the user to input a distance in kilometers
